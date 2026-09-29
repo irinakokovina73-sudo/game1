@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Escape Protocol</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+    <canvas id="game-canvas" width="960" height="640"></canvas>
+
+    <div id="hud" class="hidden">
+        <div id="hud-level">LEVEL 1</div>
+        <div id="hud-timer">00:00</div>
+        <div id="hud-deaths">☠ 0</div>
+    </div>
+
+    <div id="menu-screen" class="screen">
+        <div class="menu-content">
+            <h1 class="game-title">ESCAPE<span>PROTOCOL</span></h1>
+            <p class="subtitle">Пройди 10 испытаний. Выживи. Сбеги.</p>
+            <div class="menu-buttons">
+                <button id="btn-play" class="btn btn-primary">Играть</button>
+                <button id="btn-continue" class="btn btn-secondary hidden">Продолжить</button>
+                <button id="btn-reset" class="btn btn-danger">Заново</button>
+            </div>
+            <div class="controls-info">
+                <h3>Управление</h3>
+                <div class="controls-grid">
+                    <div><span class="key">W</span> Вверх</div>
+                    <div><span class="key">A</span> Влево</div>
+                    <div><span class="key">S</span> Вниз</div>
+                    <div><span class="key">D</span> Вправо</div>
+                    <div><span class="key">ESC</span> Пауза</div>
+                    <div><span class="key">R</span> Рестарт</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameover-screen" class="screen hidden">
+        <div class="overlay-content">
+            <h2 class="death-title">ВЫ ПОГИБЛИ</h2>
+            <p id="death-level">Уровень 1</p>
+            <div class="overlay-buttons">
+                <button id="btn-retry" class="btn btn-primary">Повторить (R)</button>
+                <button id="btn-menu-from-death" class="btn btn-secondary">В меню</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="levelcomplete-screen" class="screen hidden">
+        <div class="overlay-content">
+            <h2 class="complete-title">УРОВЕНЬ ПРОЙДЕН</h2>
+            <p id="complete-info">Следующий</p>
+            <div class="overlay-buttons">
+                <button id="btn-next" class="btn btn-primary">Продолжить (Enter)</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pause-screen" class="screen hidden">
+        <div class="overlay-content">
+            <h2 class="pause-title">ПАУЗА</h2>
+            <div class="overlay-buttons">
+                <button id="btn-resume" class="btn btn-primary">Продолжить</button>
+                <button id="btn-restart-level" class="btn btn-secondary">Уровень заново</button>
+                <button id="btn-menu-from-pause" class="btn btn-danger">В меню</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="victory-screen" class="screen hidden">
+        <div class="overlay-content">
+            <h2 class="victory-title">ИГРА ПРОЙДЕНА</h2>
+            <div class="stats">
+                <div class="stat-row"><span>Время:</span><span id="stat-time">00:00</span></div>
+                <div class="stat-row"><span>Смертей:</span><span id="stat-deaths">0</span></div>
+                <div class="stat-row"><span>Уровней:</span><span id="stat-levels">10</span></div>
+            </div>
+            <button id="btn-play-again" class="btn btn-primary">Играть заново</button>
+        </div>
+    </div>
+</div>
+
+<script src="levels.js"></script>
+<script src="audio.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
